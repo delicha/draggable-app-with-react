@@ -17,18 +17,18 @@ const Column = ({
   };
 
   return (
-  
     <>
       <div className="column-container">
         {notes.map((note) => (
-          <div key={note.id}>
-            <div className="column-note-title">
-              <strong>{note.title}</strong>
+          <div className="column-task">
+            <div key={note.id}>
+              <div className="column-note-title">
+                <strong>{note.title}</strong>
+                <button onClick={() => onDeleteNote(note.id)}>削除</button>
+              </div>
             </div>
-            <button onClick={() => onDeleteNote(note.id)}>削除</button>
           </div>
         ))}
-        
         <button onClick={ShowModal}>+</button>
         <Modal
           notes={notes} 
